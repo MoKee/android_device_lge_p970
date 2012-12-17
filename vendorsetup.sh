@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo mk_p970-userdebug
+# add_lunch_combo mk_p970-userdebug
