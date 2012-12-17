@@ -1,6 +1,6 @@
 [
  {
-   "repository": "lge-kernel-sniper",
+   "repository": "android_kernel_lge_sniper",
    "target_path": "kernel/lge/p970",
    "branch": "jb_mkt"
  }
