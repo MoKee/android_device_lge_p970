@@ -135,7 +135,7 @@ $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 PRODUCT_AAPT_CONFIG := normal hdpi
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_p970
+PRODUCT_NAME := mk_p970
 PRODUCT_DEVICE := p970
 PRODUCT_MODEL := LG-P970
 PRODUCT_MANUFACTURER := LGE
