@@ -92,3 +92,6 @@ COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"rs"' -DBOARD_CHARGING_CM
 ## Radio fixes
 BOARD_RIL_CLASS := ../../../device/lge/p970/ril/
 
+ifdef MK_RELEASE
+WITH_DEXPREOPT := true
+endif
