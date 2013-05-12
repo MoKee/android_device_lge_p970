@@ -138,15 +138,16 @@ set_light_buttons(struct light_device_t* dev,
 {
     int err = 0;
     int on = is_lit(state);
-    long value = rgb_to_brightness(state) ? 40 : 0;
+    long value = rgb_to_brightness(state);
+
+    value /= 7;
 
     ALOGV("Setting button brightness to %ld",value);
 
     pthread_mutex_lock(&g_lock);
+    err = write_int(BUTTON_STATE, value ? 1 : 0);
     write_int(BUTTON_SYNC, 1);
     write_int(BUTTON_BRIGHTNESS, (int)value);
-    err = write_int(BUTTON_STATE, on ? 1 : 0);
-    write_int(BUTTON_SYNC, 0);
     pthread_mutex_unlock(&g_lock);
     return err;
 }
@@ -161,8 +162,11 @@ set_light_backlight(struct light_device_t* dev,
     ALOGV("Setting display brightness to %d",brightness);
 
     pthread_mutex_lock(&g_lock);
-    //no need to save state
-    //it can cause flash backlight
+    if (brightness) {
+        write_int(LCD_STATE, 1);
+    } else {
+        write_int(LCD_STATE, 0);
+    }
     err = write_int(LCD_FILE, (brightness));
     pthread_mutex_unlock(&g_lock);
 
