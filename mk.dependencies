@@ -3,5 +3,10 @@
    "repository": "MoKee/android_kernel_lge_sniper",
    "target_path": "kernel/lge/p970",
    "branch": "jb_mkt"
+ },
+ {
+   "repository": "MoKee/android_vendor_lge_p970",
+   "target_path": "vendor/lge/p970",
+   "branch": "jb-mr1_mkt"
  }
 ]
